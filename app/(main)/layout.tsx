@@ -3,24 +3,28 @@
 import { useConvexAuth } from "convex/react";
 import { redirect } from "next/navigation";
 import { Spinner } from '@/components/spinner';
+import  {Navigation}  from "./_components/navigation";
+import { SearchCommand } from "@/components/search-command";
 
 
-  const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const { isAuthenticated, isLoading } = useConvexAuth()
-    if (isLoading) {
-        return (
-            <div>
-                <Spinner size='lg' />
-            </div>
-        )
-    }
-    if (isAuthenticated) { 
-        return redirect('/')
-    }
+     if (isLoading) {
     return (
-        <div>
-            {children}
-        </div> 
+      <div className="h-full flex items-center justify-center">
+        <Spinner size="lg" />
+      </div>
+    );
+  }
+    if (!isAuthenticated) { return redirect('/') }
+    return (
+        <div className="h-full flex dark:bg-[#1f1f1f]">
+            <Navigation />
+            <main className="flex-1 h-full overflow-y-auto">
+              <SearchCommand />
+              {children}
+            </main>
+        </div>
     );
 }
 

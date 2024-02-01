@@ -19,7 +19,7 @@ export const ModalProvider = () => {
   return (
     <>
       <SettingsModal />
-      <CoverImageModal />
+      {/* <CoverImageModal /> */}
     </>
   );
 };

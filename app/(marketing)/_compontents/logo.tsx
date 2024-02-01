@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { Poppins } from "next/font/google";
+import Image from "next/image"
+import { Poppins } from "next/font/google"
 
 import { cn } from "@/lib/utils";
 
@@ -26,7 +26,7 @@ export const Logo = () => {
         className="hidden dark:block"
       />
       <p className={cn("font-semibold", font.className)}>
-        Jotion
+        Notion
       </p>
     </div>
   )
