@@ -29,7 +29,9 @@ import { UserItem } from "./user-item";
 import { Item } from "./item";
 import { DocumentList } from "./document-list";
 import { TrashBox } from "./trash-box";
-// import { Navbar } from "./navbar";
+import { Navbar}  from "./navbar";
+import { Test } from "./test";
+
 
 export const Navigation = () => {
   const router = useRouter();
@@ -70,6 +72,8 @@ export const Navigation = () => {
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
   };
+
+
 
   const handleMouseMove = (event: MouseEvent) => {
     if (!isResizingRef.current) return;
@@ -204,11 +208,11 @@ export const Navigation = () => {
           isMobile && "left-0 w-full"
         )}
       >
-        {!!params.documentId ? (<></>
-          // <Navbar
-          //   isCollapsed={isCollapsed}
-          //   onResetWidth={resetWidth}
-          // />
+        {!!params.documentId ? (
+          <Navbar
+            isCollapsed={isCollapsed}
+            onResetWidth={resetWidth}
+          />
         ) : (
           isCollapsed &&
           <nav className="bg-transparent px-3 py-2 w-full">

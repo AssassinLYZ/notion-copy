@@ -7,6 +7,7 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/spinner";
+import {Test} from "../../(main)/_components/test"
 
 export const Heading = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
@@ -40,7 +41,9 @@ export const Heading = () => {
             <ArrowRight className="h-4 w-4 ml-2" />
           </Button>
         </SignInButton>
+
       )}
+      <Test/>
     </div>
   )
 }
