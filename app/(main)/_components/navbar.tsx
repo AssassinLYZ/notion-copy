@@ -12,7 +12,6 @@ import { Banner } from "./banner";
 import { Menu } from "./menu";
 import { Publish } from "./publish";
 
-import React, { useMemo, memo } from 'react';
 
 
 interface NavbarProps {

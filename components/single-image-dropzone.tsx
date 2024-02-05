@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { UploadCloudIcon, X } from "lucide-react";
 import * as React from "react";
 import { useDropzone, type DropzoneOptions } from "react-dropzone";
@@ -142,9 +142,11 @@ const SingleImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
 
           {imageUrl ? (
             // Image Preview
-            <img
-              className="h-full w-full rounded-md object-cover"
+            <Image
+              className="h-full w-full rounded-md object-cover "
               src={imageUrl}
+              width={100}
+              height={100}
               alt={acceptedFiles[0]?.name}
             />
           ) : (
